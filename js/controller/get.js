@@ -11,6 +11,8 @@ function isiRow(value) {
     .replace("#NAMA#", value.absensi.biodata.nama)
     .replace("#NOHP#", value.absensi.biodata ? value.absensi.biodata.phonenumber : "#NOHP#")
     .replace("#MATAKULIAH#", value.kategori.nama_mk)
+    .replace("#SKS#", value.kategori.sks)
+    .replace("#NIK#", value.kategori.pengampu ? value.kategori.pengampu.nik : "#NIK#")
     .replace("#DOSEN#", value.kategori.pengampu ? value.kategori.pengampu.namadosen : "#DOSEN#")
     .replace("#NOHPD#", value.kategori.pengampu.phonenumberd)
     .replace("#JAMMASUK#", value.kategori.jadwal ? value.kategori.jadwal.jammasuk : "#JAMMASUK#")
@@ -25,6 +27,7 @@ function isiRow(value) {
     .replace("#UTS#", value.uts)
     .replace("#UAS#", value.uts)
     .replace("#GRADE#", value.grade.namagrade)
+    .replace("#SKALA#", value.grade.skala)
     .replace("#WARNA#", getRandomColor())
     .replace(/#WARNALOGO#/g, getRandomColorName());
   addInner("iniTabel", content);
